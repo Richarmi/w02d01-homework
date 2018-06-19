@@ -113,6 +113,7 @@ const bondFilms = [
 let bondTitles = [];
 let oddBonds = [];
 let oddBondsCounter = 0;
+let totalGrossSum = 0;
 
 for(let i in bondFilms)
 {
@@ -130,3 +131,19 @@ for(let i = 0; i < oddBondsCounter; i++)
 {
   console.log(oddBonds[i]);
 }
+
+for(let i = 0; i < bondFilms.length; i++)
+{
+  bondFilms[i].gross = bondFilms[i].gross.replace("$", "");
+
+  thisString = bondFilms[i].gross.split(',');
+  thisString2 = thisString.join("");
+
+  console.log(thisString2);
+
+
+  totalGrossSum += parseInt(thisString2);
+  //console.log(parseInt(bondFilms[i].gross));
+}
+
+console.log(totalGrossSum);
