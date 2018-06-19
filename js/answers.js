@@ -111,6 +111,8 @@ const bondFilms = [
 ];
 
 let bondTitles = [];
+let oddBonds = [];
+let oddBondsCounter = 0;
 
 for(let i in bondFilms)
 {
@@ -118,6 +120,13 @@ for(let i in bondFilms)
 
   if((bondFilms[i].year) % 2 === 1)
   {
+    oddBonds[oddBondsCounter] = bondFilms[i];
     console.log(bondTitles[i]);
+    oddBondsCounter++;
   }
+}
+
+for(let i = 0; i < oddBondsCounter; i++)
+{
+  console.log(oddBonds[i]);
 }
